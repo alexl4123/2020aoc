@@ -21,7 +21,7 @@ int main (int argc, char *argv[])
     //Input validation    
     if (argc != 4)
 	{
-	    fprintf (stderr, "[%s]: Error, synopsis: %s file -l level\n",
+	    fprintf (stderr, "[%s]: Error, synopsis: %s -l level file\n",
 		     argv[0], argv[0]);
 	    return EXIT_FAILURE;
 	}
@@ -133,7 +133,9 @@ int main (int argc, char *argv[])
 
     fprintf (stdout, "[%s]: There are %d valid lines. \n", argv[0],
 	     validLines);
-
+    
+    fclose(file);
+    
     return EXIT_SUCCESS;
 }
 
