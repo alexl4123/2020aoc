@@ -21,24 +21,41 @@ static long calcB(char * bag, Container *bags[594]);
 int main (int argc, char *argv[])
 {
 
+    //----------INPUT_VALIDATION-----------------------
+    
     if (argc != 3)
 	{
 	    fprintf (stderr, "Usage: %s -i <FILE>", argv[0]);
 	    return EXIT_FAILURE;
 	}
 
-    FILE *file = fopen (argv[2], "r");
+    int opt;
+    char * fileName = NULL;
+
+    while((opt = getopt(argc,argv,"i:")) != -1) {
+        switch(opt) {
+            case 'i': 
+                fileName = optarg;
+                break;
+            default:
+                fprintf(stderr,"[%s]: usage: %s -i <FILE>\n",argv[0],argv[0]);
+                return EXIT_FAILURE;
+        }
+    }
+
+    //---------END_INPUT_VALIDATION-------------------
+
+    FILE *file = fopen (fileName, "r");
     char *line = NULL;
     size_t len = 0;
     ssize_t nread;
 
     if (file == NULL)
 	{
-	    fprintf (stderr, "[%s]: Error opening file!", argv[0]);
+	    fprintf (stderr, "[%s]: Error opening file!\n", argv[0]);
 	    return EXIT_FAILURE;
 	}
 
-    //TODO - dynamic line count 
     int lineCount = 594;
     Container *containers[lineCount];
 
