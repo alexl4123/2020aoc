@@ -8,10 +8,10 @@ CFLAGS = -std=c99 -pedantic -Wall $(DEFS)
 all: 08
 
 08: 08.o
-	$(CC) 08.o -o 08
+	$(CC) -o $@ $^
 
 08.o: 08.c
-	$(CC) $(CFLAGS) 08.c
+	$(CC) $(CFLAGS) $^
 
 
 
