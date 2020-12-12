@@ -15,4 +15,4 @@ all: 11
 
 
 clean : 
-	rm -rf 09 09.o
+	rm -rf 11 11.o
