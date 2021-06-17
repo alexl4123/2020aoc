@@ -4,7 +4,7 @@ AlignEscapedNewlines: DontAlign
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Inline
 AllowShortIfStatementsOnASingleLine: true
-BreakBeforeBraces: Attach
+BreakBeforeBraces: Allman
 ColumnLimit: 100
 Cpp11BracedListStyle: false
 IndentCaseLabels: true
@@ -13,4 +13,4 @@ PointerAlignment: Left
 SpaceBeforeParens: Never
 TabWidth: 4
 SpaceBeforeParens: ControlStatements
-UseTab: ForIndentation
+UseTab: Never
