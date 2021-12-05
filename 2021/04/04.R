@@ -90,17 +90,14 @@ exercise2 <- function(matrices) {
       hit_m2 <- match(TRUE, res_m2)
       
       if (!is.na(hit_m1) && is.na(match(i, winner))) {
-        print(paste("won",i,x))
         winner <- union(winner, i)
     } else if(!is.na(hit_m2) && is.na(match(i,winner))) {
         # This board won
-        print(paste("won",i,x))
         winner <- union(winner, i)
       }
     }
     
     if (length(winner) >= length(matrices)) {
-      print(paste("fin",x)) 
       win_board <- winner[length(winner)]
       s <- sum(as.integer(matrices[[win_board]][matrices[[win_board]] != "X"]))
       res2 <- s * as.integer(x)
